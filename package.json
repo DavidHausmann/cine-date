@@ -2,5 +2,22 @@
   "name": "movie-picker",
   "private": true,
   "version": "0.1.0",
-  "packageManager": "pnpm@10"
+  "packageManager": "pnpm@10.15.0",
+  "scripts": {
+    "dev": "pnpm -r --parallel dev",
+    "dev:web": "pnpm --filter @movie-picker/web dev",
+    "dev:api": "pnpm --filter @movie-picker/api dev",
+    "start:back": "powershell -ExecutionPolicy Bypass -File ./scripts/start-back.ps1",
+    "start:front": "powershell -ExecutionPolicy Bypass -File ./scripts/start-front.ps1",
+    "reload": "powershell -ExecutionPolicy Bypass -File ./scripts/restart.ps1",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "format": "pnpm -r format",
+    "prisma:generate": "pnpm --filter @movie-picker/api prisma:generate",
+    "prisma:migrate": "pnpm --filter @movie-picker/api prisma:migrate",
+    "prisma:studio": "pnpm --filter @movie-picker/api prisma:studio"
+  },
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  }
 }
